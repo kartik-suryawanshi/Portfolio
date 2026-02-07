@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# Kartik Suryawanshi | Portfolio
 
-## Project info
+A personal portfolio and resume site showcasing projects, experience, skills, and a contact form. Built with a dark, developer-focused aesthetic and modern tooling.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **About** – Introduction and background
+- **Skills** – Technical arsenal (Languages, Frontend, Backend, AI/ML, Mobile, Tools) with proficiency indicators
+- **Projects** – Highlighted work with links and descriptions
+- **Experience** – Timeline of roles and education
+- **Contact** – Form that sends emails via [Resend](https://resend.com) to your inbox
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **React 18** + **TypeScript**
+- **Vite** – Build tool and dev server
+- **Tailwind CSS** – Styling
+- **shadcn/ui** – UI components (Radix-based)
+- **Framer Motion** – Animations
+- **Resend** – Contact form email delivery (Node/Express backend)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- [Node.js](https://nodejs.org/) (v18 or later) and npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone the repository
+git clone <YOUR_REPO_URL>
+cd Portfolio_new
 
-Follow these steps:
+# Install dependencies
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Environment
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Create a `.env` file in the project root for the contact form (see `.env.example`):
 
-# Step 3: Install the necessary dependencies.
-npm i
+```env
+RESEND_API_KEY=your_resend_api_key
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Get an API key at [Resend](https://resend.com/api-keys).
+
+### Run Locally
+
+**Development (frontend only):**
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Runs the app at [http://localhost:8080](http://localhost:8080). The contact form will not send emails until the API server is running.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Frontend + contact API (full setup):**
 
-**Use GitHub Codespaces**
+```bash
+npm run dev:all
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This starts both the Vite dev server (port 8080) and the contact API server (port 3001). The contact form will send emails to the address configured in `server/index.js`.
 
-## What technologies are used for this project?
+**Run API server only:**
 
-This project is built with:
+```bash
+npm run server
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Build for Production
 
-## How can I deploy this project?
+```bash
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Output is in the `dist` folder. Deploy this folder to any static host (Vercel, Netlify, GitHub Pages, etc.). For the contact form to work in production, deploy the `server` as well (e.g. Railway, Render, or a serverless function) and point the frontend to that API URL if needed.
 
-## Can I connect a custom domain to my Lovable project?
+## Project Scripts
 
-Yes, you can!
+| Script       | Description                          |
+| ------------ | ------------------------------------ |
+| `npm run dev`     | Start Vite dev server                |
+| `npm run server`  | Start contact API (Resend)           |
+| `npm run dev:all` | Start both dev server and API        |
+| `npm run build`   | Production build                     |
+| `npm run preview` | Preview production build locally    |
+| `npm run lint`    | Run ESLint                           |
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Author
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Kartik Suryawanshi**  
+AI & Data Science Engineer · [LinkedIn](https://linkedin.com/in/suryawanshi-kartik) · [GitHub](https://github.com/kartik-suryawanshi)
